@@ -11,5 +11,5 @@ import { DUMMY_USERS } from './dummy-users';
   styleUrl: './app.component.css',
 })
 export class AppComponent {
-  user = DUMMY_USERS;
+  users = DUMMY_USERS;
 }
