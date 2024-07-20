@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-user',
@@ -7,10 +7,13 @@ import { Component } from '@angular/core';
   styleUrl: './user.component.css',
 })
 export class UserComponent {
-  // get imagePath() {
-  //   // a getter function to dynamic path value
-  //   return 'assets/users/' + this.selectedUser.avatar;
-  // }
+  @Input() avatar!: string;
+  @Input() name!: string;
+
+  get imagePath() {
+    // a getter function to dynamic path value
+    return 'assets/users/' + this.avatar;
+  }
 
   // function for click event
   onSelectUser() {}
