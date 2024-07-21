@@ -1,4 +1,11 @@
-import { Component, computed, input, Input } from '@angular/core';
+import {
+  Component,
+  computed,
+  EventEmitter,
+  input,
+  Input,
+  Output,
+} from '@angular/core';
 
 @Component({
   selector: 'app-user',
@@ -7,8 +14,10 @@ import { Component, computed, input, Input } from '@angular/core';
   styleUrl: './user.component.css',
 })
 export class UserComponent {
+  @Input({ required: true }) id!: string;
   @Input({ required: true }) avatar!: string;
   @Input({ required: true }) name!: string;
+  @Output() select = new EventEmitter();
 
   // // same as before but rewrite properties with signal
   // //rememeber u shoud use call function syntax with () at user.component.html
@@ -22,5 +31,7 @@ export class UserComponent {
   }
 
   // function for click event
-  onSelectUser() {}
+  onSelectUser() {
+    this.select.emit(this.id);
+  }
 }
