@@ -21,6 +21,8 @@ export class UserComponent {
   // @Input({ required: true }) name!: string;
   //create one single object instead of 3 values
   @Input({ required: true }) user!: User;
+  @Input({ required: true }) selected!: boolean;
+
   // @Output() select = new EventEmitter();
   @Output() select = new EventEmitter<string>();
 
