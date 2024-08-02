@@ -1,6 +1,6 @@
 @if(isAddTask){
 
-<app-new-task />
+<app-new-task (cancel)="onCancelAddTask()" />
 }
 <section id="tasks">
   <header>

@@ -18,10 +18,13 @@ export class TasksComponent {
   get selectedUserTasks() {
     return this.tasks.filter((task) => task.userId === this.userId);
   }
+  onComplite(id: string) {
+    this.tasks = this.tasks.filter((task) => task.id !== id)!;
+  }
   onStartAddTask() {
     this.isAddTask = true;
   }
-  onComplite(id: string) {
-    this.tasks = this.tasks.filter((task) => task.id !== id)!;
+  onCancelAddTask() {
+    this.isAddTask = false;
   }
 }
